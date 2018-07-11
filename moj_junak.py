@@ -1,0 +1,11 @@
+print("Kreirajte svog junaka!")
+ime = input("Kako se zove vas junak? ")
+starost = input("Koliko godina ima vas junak? ")
+prednosti = input("Koje prednosti ima vas junak? ")
+slabosti = input("Koje slabosti ima vas junak? ")
+print("Ime vaseg junaka je", ime)
+print("Vas junak ima", starost, "godina")
+print("Prednosti:", prednosti)
+print("Slabosti:", slabosti)
+print(ime, "kaze, 'Hvala sto si me stvorio!'")
+
