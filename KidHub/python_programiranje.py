@@ -6,28 +6,32 @@ time.sleep(1)
 print("Pocni da pogadjas")
 time.sleep(0.5)
 #osmislimo rec za pogadjanje
-rec="lokativ"
+rec="raskrsnica"
 #promeljiva koja pamti nas pogodak
 slovo=''
-broj_pokusaja = 10
+broj_pokusaja = 15
+
+ispis = []
+for i in range(0, len(rec)):
+    ispis.append('_')
+
 #petlja za pokusaje
-ispis = ['_','_','_','_','_', '_', '_']
-pogresan=0
-while broj_pokusaja>0:
+pogresan = 0
+while broj_pokusaja > 0:
     pokusaj = input("unesi jedno slovo: ")
-    slovo = pokusaj
+    slovo = pokusaj.lower()
     # nase slovo je jednako onome sto je uneto
 
     #ispisi crtice za svako slovo
     if slovo in rec:
-
-        index = rec.index(slovo)
-        ispis[index] = slovo
-        broj_pokusaja = broj_pokusaja - 1
-
+        for index in range(0, len(rec)):
+            # print("IF " + slovo + " == " + rec[index : index + 1])
+            if slovo == rec[index : index + 1]:
+                ispis[index] = slovo
     else:
-        pogresan+=1
-        broj_pokusaja = broj_pokusaja - 1
+        pogresan += 1
+
+    broj_pokusaja = broj_pokusaja - 1
 
     print(ispis)
     print("Preostali broj pokusaja je " + str(broj_pokusaja))
